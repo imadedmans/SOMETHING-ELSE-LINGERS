@@ -1,0 +1,99 @@
+[gd_scene load_steps=10 format=3 uid="uid://dx7ck7xyrgdop"]
+
+[ext_resource type="Texture2D" uid="uid://7gpm7rysf3nv" path="res://Other Images/BlackSpace.jpg" id="1_ko40o"]
+[ext_resource type="Script" path="res://Scripts/proseed.gd" id="1_yvctp"]
+[ext_resource type="FontFile" uid="uid://bdlcnjrxf26e5" path="res://Fonts/runescape_uf.ttf" id="2_yt22g"]
+[ext_resource type="Shader" path="res://Scripts/CRTShader.gdshader" id="3_ivtob"]
+[ext_resource type="Texture2D" uid="uid://crfftqbyxu5c" path="res://Other Images/Button_0.png" id="4_y8da5"]
+[ext_resource type="Texture2D" uid="uid://b3v727wb73puu" path="res://Other Images/Button_2.png" id="5_43x23"]
+[ext_resource type="Texture2D" uid="uid://c8u4hkr0g5vr7" path="res://Other Images/Button_1.png" id="6_s6i6p"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uh02t"]
+shader = ExtResource("3_ivtob")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.3
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 20.0
+shader_parameter/roll_variation = 1.0
+shader_parameter/distort_intensity = 0.002
+shader_parameter/noise_opacity = 0.06
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 4.75e-08
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_nqyqf"]
+
+[node name="ContentWarning" type="Node2D"]
+script = ExtResource("1_yvctp")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(587, 336)
+scale = Vector2(1.88, 1.49556)
+texture = ExtResource("1_ko40o")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 12.0
+offset_top = 65.0
+offset_right = 1164.0
+offset_bottom = 488.0
+theme_override_fonts/normal_font = ExtResource("2_yt22g")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[center]Content Warning!
+
+This game contains graphic depictions of blood and violence writing wise and imagery wise. There are also FLASHING LIGHTS at certain parts of the game
+
+If you are easily squeamish to these type of things, I reccommend playing something else (or ranking another entry since this was made for a contest :P)
+
+(Press SPACE to continue dialogue)
+(Press Q to toggle screen shader)"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_uh02t")
+position = Vector2(576, 324)
+scale = Vector2(1152, 648)
+texture = SubResource("CanvasTexture_nqyqf")
+
+[node name="Button" type="TextureButton" parent="."]
+offset_left = 180.0
+offset_top = 502.0
+offset_right = 972.0
+offset_bottom = 622.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("4_y8da5")
+texture_pressed = ExtResource("5_43x23")
+texture_hover = ExtResource("6_s6i6p")
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 322.0
+offset_top = 33.0
+offset_right = -302.0
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_yt22g")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[center]Play"
+
+[connection signal="button_down" from="Button" to="." method="_on_button_down"]

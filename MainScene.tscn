@@ -1,0 +1,4291 @@
+[gd_scene load_steps=75 format=4 uid="uid://dctw7toroqocb"]
+
+[ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_3dv3g"]
+[ext_resource type="FontFile" uid="uid://bdlcnjrxf26e5" path="res://Fonts/runescape_uf.ttf" id="2_b66qo"]
+[ext_resource type="Script" path="res://Scripts/DialogueText.gd" id="2_bqttc"]
+[ext_resource type="Texture2D" uid="uid://7gpm7rysf3nv" path="res://Other Images/BlackSpace.jpg" id="2_k8s1e"]
+[ext_resource type="FontFile" uid="uid://10rawvjny34n" path="res://Fonts/smalle.ttf" id="2_wi6ag"]
+[ext_resource type="Script" path="res://Scripts/EventObject.gd" id="3_us6cx"]
+[ext_resource type="Texture2D" uid="uid://c7r0rgl71xnuo" path="res://MapTileset.tres" id="5_h8t54"]
+[ext_resource type="FontFile" uid="uid://bl53m6amemvec" path="res://Fonts/vhs-gothic.ttf" id="5_lh2k1"]
+[ext_resource type="TileSet" uid="uid://c7r0rgl71xnuo" path="res://MapTileset.tres" id="5_lol5v"]
+[ext_resource type="FontFile" uid="uid://dc7paqsgq1rsk" path="res://Fonts/bitcre.ttf" id="6_2iofh"]
+[ext_resource type="AudioStream" uid="uid://dy3aw8sc1r8sj" path="res://SFX&Music/AmbienceSFX.MP3" id="6_5ou74"]
+[ext_resource type="Texture2D" uid="uid://cfyfh4hoxhvy6" path="res://Other Images/OH GOD MY EYES.png" id="8_itjc2"]
+[ext_resource type="Script" path="res://Scripts/QuickTime.gd" id="8_t4hhe"]
+[ext_resource type="Texture2D" uid="uid://crfftqbyxu5c" path="res://Other Images/Button_0.png" id="9_6cv5e"]
+[ext_resource type="AudioStream" uid="uid://dskntfn62bh7f" path="res://SFX&Music/SlashSFX.wav" id="9_t5nc3"]
+[ext_resource type="Texture2D" uid="uid://b3v727wb73puu" path="res://Other Images/Button_2.png" id="10_2hgo1"]
+[ext_resource type="Texture2D" uid="uid://dl5cutawiygf7" path="res://SkongCloseup/frame0000.png" id="10_ilir7"]
+[ext_resource type="Texture2D" uid="uid://c8u4hkr0g5vr7" path="res://Other Images/Button_1.png" id="11_3q87j"]
+[ext_resource type="Texture2D" uid="uid://c2nuc30nabe0d" path="res://SkongCloseup/frame0001.png" id="11_oqiaa"]
+[ext_resource type="Texture2D" uid="uid://bjnx4nsow08b4" path="res://SkongCloseup/frame0002.png" id="12_4ruxl"]
+[ext_resource type="Texture2D" uid="uid://cvdr70uusuftd" path="res://SkongCloseup/frame0003.png" id="13_ax158"]
+[ext_resource type="Texture2D" uid="uid://be8jgynjffp4v" path="res://SkongCloseup/frame0004.png" id="14_5yxkl"]
+[ext_resource type="AudioStream" uid="uid://cxteemrjbwg8c" path="res://SFX&Music/EntityBreathing.MP3" id="14_pwgcs"]
+[ext_resource type="AudioStream" uid="uid://b1bexmy5k6wga" path="res://SFX&Music/dodge sfx.MP3" id="17_y3355"]
+[ext_resource type="Texture2D" uid="uid://c7ui7jag5dgtt" path="res://SlashEffect/frame0000.png" id="18_540yv"]
+[ext_resource type="AudioStream" uid="uid://bmypw08385e33" path="res://SFX&Music/ACCESSION .MP3" id="19_66aw7"]
+[ext_resource type="Texture2D" uid="uid://bqflvkisw5inr" path="res://SlashEffect/frame0001.png" id="19_plc4t"]
+[ext_resource type="AudioStream" uid="uid://bsfi8qpfhhwiw" path="res://SFX&Music/TypeSFX.MP3" id="19_rmvtt"]
+[ext_resource type="Texture2D" uid="uid://coby0xkj1gdd0" path="res://SlashEffect/frame0002.png" id="20_6pahg"]
+[ext_resource type="AudioStream" uid="uid://kmrjxfayq1ly" path="res://SFX&Music/EntityRoar.MP3" id="20_blyrt"]
+[ext_resource type="Texture2D" uid="uid://da4tp1rpa4b8j" path="res://SlashEffect/frame0003.png" id="21_u1fq0"]
+[ext_resource type="Texture2D" uid="uid://dahwr5gcle55c" path="res://SlashEffect/frame0004.png" id="22_3242i"]
+[ext_resource type="AudioStream" uid="uid://ckkdelm3nf248" path="res://SFX&Music/obtainedThing.MP3" id="22_yssbf"]
+[ext_resource type="AudioStream" uid="uid://d32jvsrwv7hsd" path="res://SFX&Music/deadGuyTheme.MP3" id="23_atnwo"]
+[ext_resource type="Texture2D" uid="uid://cjwfjiqsg5jt" path="res://SlashEffect/frame0005.png" id="23_b2by8"]
+[ext_resource type="Texture2D" uid="uid://c1f3ipm5ctw3h" path="res://SlashEffect/frame0006.png" id="24_lwa06"]
+[ext_resource type="Texture2D" uid="uid://nht71muow7ye" path="res://SlashEffect/frame0007.png" id="25_qdd5p"]
+[ext_resource type="Texture2D" uid="uid://cjgnm6hooftbe" path="res://SlashEffect/frame0008.png" id="26_06tg4"]
+[ext_resource type="Texture2D" uid="uid://dokea5mfxhqof" path="res://Other Images/SkongMan.png" id="29_07tw8"]
+[ext_resource type="Texture2D" uid="uid://3hwh6lajwi0w" path="res://Other Images/corrupted skong.png" id="33_cmoyf"]
+[ext_resource type="Script" path="res://Scripts/MilitaryDialogueContainer.gd" id="33_fvnwl"]
+[ext_resource type="Texture2D" uid="uid://c50d1h4l4m8lj" path="res://Other Images/deadguylol.png" id="36_uulxa"]
+[ext_resource type="Script" path="res://Scripts/ShakeScript.gd" id="37_30cxq"]
+[ext_resource type="Script" path="res://Scripts/ow.gd" id="37_ry65u"]
+[ext_resource type="Shader" path="res://Scripts/CRTShader.gdshader" id="42_ktdd4"]
+[ext_resource type="Script" path="res://Scripts/SurvivorDialogue.gd" id="43_lqlbf"]
+
+[sub_resource type="FontFile" id="FontFile_nnj2t"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/40/0/ascent = 0.0
+cache/0/40/0/descent = 0.0
+cache/0/40/0/underline_position = 0.0
+cache/0/40/0/underline_thickness = 0.0
+cache/0/40/0/scale = 1.0
+
+[sub_resource type="Animation" id="Animation_h8d64"]
+resource_name = "EndingCutscene"
+length = 8.0
+step = 0.1
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DialogueLabel")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.19, 1, 2, 3, 4, 6, 7, 12.9, 13),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"clearText"
+}, {
+"args": [1],
+"method": &"changeFont"
+}, {
+"args": [0],
+"method": &"typeTextEnding"
+}, {
+"args": [1],
+"method": &"typeTextEnding"
+}, {
+"args": [2],
+"method": &"typeTextEnding"
+}, {
+"args": [3],
+"method": &"typeTextEnding"
+}, {
+"args": [],
+"method": &"clearText"
+}, {
+"args": [4],
+"method": &"typeTextEnding"
+}, {
+"args": [],
+"method": &"clearText"
+}, {
+"args": [0],
+"method": &"changeFont"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SFXPlayer:stream")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("19_rmvtt")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PositionPivot:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 13),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(-180, -60), Vector2(468, 324)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SFXPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:introPlayed")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(13),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MusicPlayer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 12),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"stop"
+}, {
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:eventHappening")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 13),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("EndingChoices:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(8),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("CanvasLayer/Sprite2D:material:shader_parameter/aberration")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [4.75e-08]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("CanvasLayer/Sprite2D:material:shader_parameter/noise_opacity")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.06]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath(".:skipWithSpace")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath(".:endingReached")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("DialogueLabel:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-492, -300)]
+}
+
+[sub_resource type="Animation" id="Animation_11cem"]
+resource_name = "EntityEncounter"
+length = 13.0
+step = 0.1
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DialogueLabel")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 10, 12.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": ["You moved forwards..."],
+"method": &"typeText"
+}, {
+"args": [],
+"method": &"clearText"
+}, {
+"args": ["Run."],
+"method": &"typeText"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DialogueLabel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3, 12.8, 12.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SkongHimself:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("QuickTimeBar")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(5, 10),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [true],
+"method": &"startQuickTime"
+}, {
+"args": [false],
+"method": &"startQuickTime"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("QuickTimeBar:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(5, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("DodgeButton:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(5, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(12.9),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"beginEscape"
+}]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("DirectionsGridContainer:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(12.9),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("SFXPlayer:stream")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(2.8, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("20_blyrt"), ExtResource("17_y3355")]
+}
+tracks/9/type = "method"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("SFXPlayer")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(2.9, 10.1),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath(".:skipWithSpace")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("SFXPlayer:volume_db")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(2.8, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0.0, 0.0]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath(".:eventHappening")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 2.1, 12.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath(".:skipWithSpace")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_0cmd3"]
+resource_name = "EventEntityChoice1"
+length = 19.0
+step = 0.1
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MusicPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(11.1, 14.9),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"stop"
+}, {
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DialogueLabel")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 2, 3, 4, 7, 8, 9, 10, 11, 13),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [3],
+"method": &"changeFont"
+}, {
+"args": ["EXCELLENT"],
+"method": &"typeTextSkong"
+}, {
+"args": ["HOW. EXCELLENT."],
+"method": &"typeTextSkong"
+}, {
+"args": ["YOU HAVE MADE THE RIGHT CHOICE"],
+"method": &"typeTextSkong"
+}, {
+"args": ["…"],
+"method": &"typeTextSkong"
+}, {
+"args": ["WHY DO YOU HESISTATE, CHILD"],
+"method": &"typeTextSkong"
+}, {
+"args": ["IF YOU HAVE CHOSEN THIS MOMENT TO DESPAIR"],
+"method": &"typeTextSkong"
+}, {
+"args": ["PLEASE, DO NOT"],
+"method": &"typeTextSkong"
+}, {
+"args": ["THIS... WILL ONLY"],
+"method": &"typeTextSkong"
+}, {
+"args": ["TAKE A BIT"],
+"method": &"typeTextSkong"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DialogueLabel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SkongCloseup:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 11.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DialogueLabel:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-492, 200)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("DialogueLabel:cutsceneHappening")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.01),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("EntityChoiceButtons:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("DialogueLabel:choiceEnabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("BackgroundWhite:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(15, 19),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath(".:skipWithSpace")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("BackgroundWhite/OHGODMYEYES:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(15),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("MusicPlayer:stream")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(14.8),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("19_66aw7")]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("MusicPlayer:playing")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(14.8),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("CanvasLayer/Sprite2D:material:shader_parameter/aberration")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(17, 18.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [4.75e-08, 1.0]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("CanvasLayer/Sprite2D:material:shader_parameter/noise_opacity")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(17, 18.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.06, 1.0]
+}
+tracks/15/type = "method"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("AnimationPlayer")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(19),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"EndingCutscene", -1, 1.0, false],
+"method": &"play"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_2p6ti"]
+resource_name = "EventEntityChoice2"
+length = 22.4
+step = 0.1
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MusicPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(20.1, 24),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"stop"
+}, {
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DialogueLabel")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [3],
+"method": &"changeFont"
+}, {
+"args": ["..."],
+"method": &"typeTextSkong"
+}, {
+"args": ["I WAS FEARFUL OF SUCH A RESPONSE"],
+"method": &"typeTextSkong"
+}, {
+"args": ["YOU HAVE DECIDED TO LEAVE YOURSELF IN THE DARKNESS"],
+"method": &"typeTextSkong"
+}, {
+"args": ["COLD, PERPETUAL STARVATION IN THIS COLD PLANE OF EXISTENCE"],
+"method": &"typeTextSkong"
+}, {
+"args": ["AND THE ONLY BLISS I CAN PROVIDE YOU"],
+"method": &"typeTextSkong"
+}, {
+"args": ["IS SOLEMN, YET COMFORTING ETERNAL DARKNESS"],
+"method": &"typeTextSkong"
+}, {
+"args": ["…"],
+"method": &"typeTextSkong"
+}, {
+"args": ["YET, AS LONG AS YOU HOLD THAT OBJECT UNDER YOUR HEAD, I HESITATE TO KILL YOU."],
+"method": &"typeTextSkong"
+}, {
+"args": ["..."],
+"method": &"typeTextSkong"
+}, {
+"args": ["I HAVE DECIDED"],
+"method": &"typeTextSkong"
+}, {
+"args": ["THE MAN BESIDES YOU, EARLIER HE… INSISTED HIS WORTH TOWARDS ME"],
+"method": &"typeTextSkong"
+}, {
+"args": ["THAT HE CAN ASCEND ALONGSIDE US, EVEN WITHOUT THE OBJECT"],
+"method": &"typeTextSkong"
+}, {
+"args": ["OF COURSE, I HAD TO DEMONSTRATE HIS WEAKNESS"],
+"method": &"typeTextSkong"
+}, {
+"args": ["IT SURPRISES ME THAT HE IS STILL CLINGING ONTO HIS POOR, BROKEN FLESH OF A COCOON"],
+"method": &"typeTextSkong"
+}, {
+"args": ["SUCH A SHAME REALLY, HE WOULD GLADLY KILL YOU FOR THE SAKE OF TAKING IT FROM YOUR HANDS"],
+"method": &"typeTextSkong"
+}, {
+"args": ["HOWEVER, THE DECISION HAS ALREADY BEEN MADE, AND SHALL BE ABIDED BY"],
+"method": &"typeTextSkong"
+}, {
+"args": ["IT SHALL BE HIS LIFE THAT SHALL SERVE AS SUSTENANCE"],
+"method": &"typeTextSkong"
+}, {
+"args": ["…FAREWELL FRIEND."],
+"method": &"typeTextSkong"
+}, {
+"args": ["MAY WE MEET AGAIN"],
+"method": &"typeTextSkong"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DialogueLabel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SkongCloseup:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 20.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DialogueLabel:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-492, 200)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("DialogueLabel:cutsceneHappening")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.01),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("EntityChoiceButtons:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("DialogueLabel:choiceEnabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(11),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"entityCheckSurvivor"
+}]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath(".:canSkipText")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("MusicPlayer:stream")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(23.9),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("19_66aw7")]
+}
+tracks/11/type = "method"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("AnimationPlayer")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(22.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"EndingCutscene", -1, 1.0, false],
+"method": &"play"
+}]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath(".:hasInstantiation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(21.8),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath(".:skipWithSpace")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath(".:hasSurivor")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(21.7),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_wapfy"]
+resource_name = "EventEntityChoice3"
+length = 11.0
+step = 0.1
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MusicPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(5.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"stop"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DialogueLabel")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 2, 3, 4, 5, 6.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [3],
+"method": &"changeFont"
+}, {
+"args": ["I’M SORRY THEN"],
+"method": &"typeTextSkong"
+}, {
+"args": ["KNOW THAT I MUST TAKE THIS DECISION WITH HEAVY HEART."],
+"method": &"typeTextSkong"
+}, {
+"args": ["…FAREWELL FRIEND."],
+"method": &"typeTextSkong"
+}, {
+"args": ["MAY YOU HOPEFULLY REALISE"],
+"method": &"typeTextSkong"
+}, {
+"args": ["THE GRAVENESS OF YOUR DECISION"],
+"method": &"typeTextSkong"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DialogueLabel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SkongCloseup:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 5.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DialogueLabel:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-492, 200)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("DialogueLabel:cutsceneHappening")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.01),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("EntityChoiceButtons:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("DialogueLabel:choiceEnabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("SlashEffect:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(7.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "method"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("SlashEffect")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(7.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/11/type = "method"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("SFXPlayer")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(7.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("SFXPlayer:stream")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(7.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_t5nc3")]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath(".:hasInstantiation")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath(".:skipWithSpace")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/15/type = "method"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("AnimationPlayer")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(10.9),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"EndingCutscene", -1, 1.0, false],
+"method": &"play"
+}]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath(".:deadLol")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(10.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_o2tnp"]
+resource_name = "EventEntityConvo"
+length = 30.0
+step = 0.1
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MusicPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"stop"
+}, {
+"args": [0.9],
+"method": &"play"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MusicPlayer:stream")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.99),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("14_pwgcs")]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DialogueLabel")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1, 3.99, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [3],
+"method": &"changeFont"
+}, {
+"args": ["HOW INTRIGUING"],
+"method": &"typeTextSkong"
+}, {
+"args": ["YOU ARE ONLY A HUMAN"],
+"method": &"typeTextSkong"
+}, {
+"args": ["A MERE PUPPET OF GORE AND ENTRIALS"],
+"method": &"typeTextSkong"
+}, {
+"args": ["TO BE DECEIVED BY FAKE GODS"],
+"method": &"typeTextSkong"
+}, {
+"args": ["TO SERVE ONLY AS CATTLE… TO US"],
+"method": &"typeTextSkong"
+}, {
+"args": ["AND YET YOU PERSIST"],
+"method": &"typeTextSkong"
+}, {
+"args": ["YOU, WITH THAT OBJECT, NO… SOMETHING ELSE ENTIRELY"],
+"method": &"typeTextSkong"
+}, {
+"args": ["LINGERING BENEATH YOUR BREATH"],
+"method": &"typeTextSkong"
+}, {
+"args": ["I CANNOT PHANTOM TO TAKE YOU AS MERE SUBSISTENCE WITH IT"],
+"method": &"typeTextSkong"
+}, {
+"args": ["THE POWER… THAT RADIATES FROM IT"],
+"method": &"typeTextSkong"
+}, {
+"args": ["YOU. CAN. JOIN US."],
+"method": &"typeTextSkong"
+}, {
+"args": ["BIND IT TO YOUR SOUL"],
+"method": &"typeTextSkong"
+}, {
+"args": ["LEAVE YOUR MORTAL FLESH HERE AND JOIN US"],
+"method": &"typeTextSkong"
+}, {
+"args": ["AND MAY YOU FACE TRUE HEAVENLY LIGHT"],
+"method": &"typeTextSkong"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DialogueLabel:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SkongCloseup:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("DialogueLabel:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-492, 204)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("DialogueLabel:cutsceneHappening")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("EntityChoiceButtons:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(18),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("DialogueLabel:choiceEnabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(16.9),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "method"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("AnimationPlayer")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(18.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"pause"
+}]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath(".:skipWithSpace")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("MusicPlayer:volume_db")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [10.0]
+}
+
+[sub_resource type="Animation" id="Animation_ihbfy"]
+resource_name = "EventInstantiation"
+length = 9.1
+step = 0.01
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DialogueLabel")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.46, 0.48, 0.52, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": ["You find a strange object on the ground "],
+"method": &"typeText"
+}, {
+"args": ["It is indescribable, a shape otherworldly seemingly changing every minute, you feel inclined not to interact with it in anyway. Yet, it emits a comforting aura, it calms you down from the tense situation you’re in. "],
+"method": &"typeText"
+}, {
+"args": ["You pick it up"],
+"method": &"typeText"
+}, {
+"args": [],
+"method": &"clearText"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SFXPlayer:stream")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.49),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("22_yssbf")]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SFXPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BackgroundWhite:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2.5, 2.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BackgroundRed:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2.6, 3.94),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("DialogueLabel:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SkongCorrupted:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(3.94, 5.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("MusicPlayer")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.51, 8.1),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"stop"
+}, {
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".:skipWithSpace")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.45, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath(".:eventHappening")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(5.3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "method"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath(".")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(9),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [true],
+"method": &"gcEnable"
+}]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath(".:hasInstantiation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(6.02),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_f3d7p"]
+resource_name = "EventSyringe"
+length = 0.53
+step = 0.01
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DialogueLabel")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.48, 0.51),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": ["You find a body enhancer capsule, a blue, glowing plasma radiates from the glass container"],
+"method": &"typeText"
+}, {
+"args": ["You pick it up, "],
+"method": &"typeText"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:gotSyringe")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.52),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:eventHappening")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.52),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:skipWithSpace")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.52),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [true],
+"method": &"gcEnable"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_s8s2b"]
+resource_name = "IntroCutscene"
+length = 13.0
+step = 0.1
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DialogueLabel")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.19, 1, 2, 3, 4, 6, 6.1, 7, 8, 9, 10, 12.9, 13),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [1],
+"method": &"changeFont"
+}, {
+"args": [0, 0],
+"method": &"typeTextReport"
+}, {
+"args": [0, 1],
+"method": &"typeTextReport"
+}, {
+"args": [0, 2],
+"method": &"typeTextReport"
+}, {
+"args": [0, 3],
+"method": &"typeTextReport"
+}, {
+"args": [],
+"method": &"clearText"
+}, {
+"args": [0, 4],
+"method": &"typeTextReport"
+}, {
+"args": [0, 5],
+"method": &"typeTextReport"
+}, {
+"args": [0, 6],
+"method": &"typeTextReport"
+}, {
+"args": [0, 7],
+"method": &"typeTextReport"
+}, {
+"args": [0, 8],
+"method": &"typeTextReport"
+}, {
+"args": [],
+"method": &"clearText"
+}, {
+"args": [0],
+"method": &"changeFont"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SFXPlayer:stream")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("19_rmvtt")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PositionPivot:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 13),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(-180, -60), Vector2(468, 300)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SFXPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:introPlayed")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(13),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MusicPlayer")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 12),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"stop"
+}, {
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:eventHappening")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(13),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("DialogueLabel:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-492, -300)]
+}
+
+[sub_resource type="Animation" id="Animation_2uamn"]
+resource_name = "PlayerDeath"
+length = 4.0
+step = 0.1
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SlashEffect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.01),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SlashEffect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.01),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SFXPlayer:stream")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_t5nc3")]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SFXPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.01),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SkongHimself:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("QuickTimeBar:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("MusicPlayer")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"stop"
+}]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("DodgeButton:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".:deadLol")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "method"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath(".")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"loadEndScreen"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_aw6yb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SlashEffect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SFXPlayer:stream")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:eventHappening")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DirectionsGridContainer:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MusicPlayer:stream")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_5ou74")]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("DialogueLabel:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SkongCloseup:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("DialogueLabel:cutsceneHappening")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("EntityChoiceButtons:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("DialogueLabel:choiceEnabled")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("SFXPlayer:volume_db")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("BackgroundWhite:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("SkongHimself:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("QuickTimeBar:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = false
+tracks/14/path = NodePath("DodgeButton:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("DialogueLabel:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-484, -264)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("BackgroundRed:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("SkongCorrupted:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath(".:skipWithSpace")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("ow:visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath(".:canSkipText")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("CanvasLayer/Sprite2D:material:shader_parameter/static_noise_intensity")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.06]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("CanvasLayer/Sprite2D:material:shader_parameter/aberration")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [4.75e-08]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("DialogueLabel:shakeText")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("ow:shakeHor")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("MusicPlayer:pitch_scale")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("EndingChoices:visible")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("CanvasLayer/Sprite2D:material:shader_parameter/noise_opacity")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(-0.0666667),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.06]
+}
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("BackgroundWhite/OHGODMYEYES:visible")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("MusicPlayer:playing")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("MusicPlayer:volume_db")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-5.0]
+}
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath(".:hasSurivor")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath(".:deadLol")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_r7owy"]
+resource_name = "SurvivorChoice1"
+length = 7.2
+step = 0.05
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DialogueLabel")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.1, 1.2, 1.3, 2.9, 3, 3.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [2],
+"method": &"changeFont"
+}, {
+"args": [1, 0],
+"method": &"typeTextSurvivor"
+}, {
+"args": [1, 1],
+"method": &"typeTextSurvivor"
+}, {
+"args": [1, 2],
+"method": &"typeTextSurvivor"
+}, {
+"args": [1, 3],
+"method": &"typeTextSurvivor"
+}, {
+"args": [0],
+"method": &"changeFont"
+}, {
+"args": ["..."],
+"method": &"typeText"
+}, {
+"args": ["He has died."],
+"method": &"typeText"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3.15),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [true],
+"method": &"gcEnable"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MusicPlayer:stream")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_5ou74")]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MusicPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.4, 3.05),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"stop"
+}, {
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ow:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:skipWithSpace")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 3.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("DialogueLabel:shakeText")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 2.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ow:shakeHor")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".:manDead")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(2.75),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath(".:eventHappening")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(3.05),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("MusicPlayer:pitch_scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.35, 1.4),
+"transitions": PackedFloat32Array(1, 1, 100),
+"update": 0,
+"values": [1.0, 1.5, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_otm7y"]
+resource_name = "SurvivorChoice2"
+length = 1.5
+step = 0.01
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DialogueLabel")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 1, 1.1, 1.2, 1.25, 1.35, 1.4, 2.4, 3, 3.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [2, 0],
+"method": &"typeTextSurvivor"
+}, {
+"args": [0],
+"method": &"changeFont"
+}, {
+"args": [2, 1],
+"method": &"typeTextSurvivor"
+}, {
+"args": [2],
+"method": &"changeFont"
+}, {
+"args": [2, 2],
+"method": &"typeTextSurvivor"
+}, {
+"args": [0],
+"method": &"changeFont"
+}, {
+"args": [2, 3],
+"method": &"typeTextSurvivor"
+}, {
+"args": [0],
+"method": &"changeFont"
+}, {
+"args": ["..."],
+"method": &"typeText"
+}, {
+"args": ["He has died."],
+"method": &"typeText"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.45),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [true],
+"method": &"gcEnable"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MusicPlayer:stream")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.45),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_5ou74")]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MusicPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"stop"
+}, {
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ow:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:skipWithSpace")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.45),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("DialogueLabel:shakeText")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 2.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ow:shakeHor")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".:eventHappening")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(1.45),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath(".:hasSurivor")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 1.44),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_4dv8b"]
+resource_name = "SurvivorEncounter"
+length = 7.2
+step = 0.05
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DialogueLabel")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 3, 4, 5, 5.1, 5.2, 5.3, 5.4, 6, 6.1, 6.2, 6.9, 7, 7.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": ["You moved in closer..."],
+"method": &"typeText"
+}, {
+"args": [],
+"method": &"clearText"
+}, {
+"args": [2],
+"method": &"changeFont"
+}, {
+"args": [0, 0],
+"method": &"typeTextSurvivor"
+}, {
+"args": [0, 1],
+"method": &"typeTextSurvivor"
+}, {
+"args": [0, 2],
+"method": &"typeTextSurvivor"
+}, {
+"args": [0, 3],
+"method": &"typeTextSurvivor"
+}, {
+"args": [0, 4],
+"method": &"typeTextSurvivor"
+}, {
+"args": [0, 5],
+"method": &"typeTextSurvivor"
+}, {
+"args": [0, 6],
+"method": &"typeTextSurvivor"
+}, {
+"args": [0, 7],
+"method": &"typeTextSurvivor"
+}, {
+"args": [0],
+"method": &"changeFont"
+}, {
+"args": ["..."],
+"method": &"typeText"
+}, {
+"args": ["He has died."],
+"method": &"typeText"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(5.5, 7.2),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"surivorCheck"
+}, {
+"args": [true],
+"method": &"gcEnable"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MusicPlayer:stream")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.9, 7.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("23_atnwo"), ExtResource("6_5ou74")]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MusicPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3, 6.3, 7.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"stop"
+}, {
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [],
+"method": &"stop"
+}, {
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ow:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(3, 6.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:skipWithSpace")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 3.2, 7.05),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("DialogueLabel:shakeText")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(4, 6.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ow:shakeHor")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(5.6),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".:manDead")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(7.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath(".:eventHappening")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(7.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("MusicPlayer:pitch_scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(5.6, 5.95, 6.3),
+"transitions": PackedFloat32Array(1, 1, 100),
+"update": 0,
+"values": [1.0, 1.5, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_q7kbo"]
+resource_name = "old."
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Sprite2D:material:shader_parameter/aberration")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [4.75e-08]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Sprite2D:material:shader_parameter/static_noise_intensity")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.06]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0824m"]
+_data = {
+"EndingCutscene": SubResource("Animation_h8d64"),
+"EntityEncounter": SubResource("Animation_11cem"),
+"EventEntityChoice1": SubResource("Animation_0cmd3"),
+"EventEntityChoice2": SubResource("Animation_2p6ti"),
+"EventEntityChoice3": SubResource("Animation_wapfy"),
+"EventEntityConvo": SubResource("Animation_o2tnp"),
+"EventInstantiation": SubResource("Animation_ihbfy"),
+"EventSyringe": SubResource("Animation_f3d7p"),
+"IntroCutscene": SubResource("Animation_s8s2b"),
+"PlayerDeath": SubResource("Animation_2uamn"),
+"RESET": SubResource("Animation_aw6yb"),
+"SurvivorChoice1": SubResource("Animation_r7owy"),
+"SurvivorChoice2": SubResource("Animation_otm7y"),
+"SurvivorEncounter": SubResource("Animation_4dv8b"),
+"old.": SubResource("Animation_q7kbo")
+}
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_wxjhv"]
+specular_color = Color(0.842635, 2.06962e-06, 5.77569e-07, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_fp4it"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3dyb"]
+size = Vector2(6, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wr0sn"]
+size = Vector2(24, 24)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q3tm5"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jsi5j"]
+bg_color = Color(0.874077, 0, 3.50392e-05, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_66sdo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_540yv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_plc4t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_6pahg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_u1fq0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_3242i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_b2by8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_lwa06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_qdd5p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_06tg4")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ocqfs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_ilir7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_oqiaa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_4ruxl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ax158")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_5yxkl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_5yxkl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ax158")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_4ruxl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_oqiaa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ilir7")
+}],
+"loop": false,
+"name": &"default",
+"speed": 18.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eeaad"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_uulxa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pbxsp"]
+shader = ExtResource("42_ktdd4")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.3
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 20.0
+shader_parameter/roll_variation = 1.0
+shader_parameter/distort_intensity = 0.002
+shader_parameter/noise_opacity = 0.06
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 4.75e-08
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_047ie"]
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_3dv3g")
+skipWithSpace = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -594.0
+offset_right = 1072.0
+offset_bottom = 594.0
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 35
+text = "Horror Survival Game:
+- SOMETHING ELSE LINGERS
+- Checkpoints in section
+- Text-based 
+- Wind sfx
+- Horrorboros sfx
+- Ultrakill ambience
+- Sprite art:
+    - Some guy you need to save
+    - THE FIGURE
+    - Creepy disfigured face when joining IT
+- Story, a gateway to hell has been discovered, a battalion has been sent to investigate, only one is reported to be alive, retrieve him, dead or alive
+- Time limit to selecting options when encountering THE FIGURE
+
+All Endings: 
+- Escape with guy
+- Escape without guy
+- JOIN IT.
+- Refuse
+- Sacrifice Guy
+"
+
+[node name="DialogueLabel" type="RichTextLabel" parent="."]
+z_index = 10
+clip_contents = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -484.0
+offset_top = -264.0
+offset_right = 483.0
+offset_bottom = 261.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = SubResource("FontFile_nnj2t")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "
+"
+script = ExtResource("2_bqttc")
+fontNormal = ExtResource("2_b66qo")
+fontCommand = ExtResource("5_lh2k1")
+fontDyingGuy = ExtResource("6_2iofh")
+fontSkong = ExtResource("2_wi6ag")
+
+[node name="TextTypeTime" type="Timer" parent="DialogueLabel"]
+wait_time = 0.01
+one_shot = true
+
+[node name="SpaceLabel" type="RichTextLabel" parent="."]
+visible = false
+clip_contents = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -348.0
+offset_top = -36.0
+offset_right = 362.0
+offset_bottom = 86.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_b66qo")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[center] Press SPACE to continue"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0824m")
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="TextLoadDelay" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(0, 4)
+scale = Vector2(1.88, 1.49556)
+texture = ExtResource("2_k8s1e")
+
+[node name="BackgroundWhite" type="Sprite2D" parent="."]
+visible = false
+z_index = 11
+position = Vector2(-3.05176e-05, 12)
+scale = Vector2(1176, 672)
+texture = SubResource("CanvasTexture_wxjhv")
+
+[node name="OHGODMYEYES" type="Sprite2D" parent="BackgroundWhite"]
+visible = false
+position = Vector2(0.0102041, 0)
+scale = Vector2(0.00137415, 0.00265476)
+texture = ExtResource("8_itjc2")
+
+[node name="BackgroundRed" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.612299, 1.50409e-06, 5.77569e-07, 1)
+z_index = 11
+position = Vector2(-3.05176e-05, 12)
+scale = Vector2(1176, 672)
+texture = SubResource("CanvasTexture_fp4it")
+
+[node name="DirectionsGridContainer" type="GridContainer" parent="."]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -563.0
+offset_top = 182.0
+offset_right = 289.0
+offset_bottom = 314.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="Button" type="TextureButton" parent="DirectionsGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("9_6cv5e")
+texture_pressed = ExtResource("10_2hgo1")
+texture_hover = ExtResource("11_3q87j")
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DirectionsGridContainer/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 182.0
+offset_top = 22.0
+offset_right = -174.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_b66qo")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[center] Go Left"
+
+[node name="Button2" type="TextureButton" parent="DirectionsGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("9_6cv5e")
+texture_pressed = ExtResource("10_2hgo1")
+texture_hover = ExtResource("11_3q87j")
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DirectionsGridContainer/Button2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 182.0
+offset_top = 22.0
+offset_right = -174.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_b66qo")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[center] Go Right"
+
+[node name="Button3" type="TextureButton" parent="DirectionsGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("9_6cv5e")
+texture_pressed = ExtResource("10_2hgo1")
+texture_hover = ExtResource("11_3q87j")
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DirectionsGridContainer/Button3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 163.0
+offset_top = 22.0
+offset_right = -155.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_b66qo")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[center] Go Forwards"
+
+[node name="Button4" type="TextureButton" parent="DirectionsGridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("9_6cv5e")
+texture_pressed = ExtResource("10_2hgo1")
+texture_hover = ExtResource("11_3q87j")
+stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DirectionsGridContainer/Button4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 154.0
+offset_top = 22.0
+offset_right = -151.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_b66qo")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[center] Go Backwards"
+
+[node name="PositionPivot" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(-180, -60)
+texture = ExtResource("5_h8t54")
+hframes = 6
+vframes = 4
+frame = 22
+
+[node name="Area2D" type="Area2D" parent="PositionPivot"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PositionPivot/Area2D"]
+shape = SubResource("RectangleShape2D_t3dyb")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+z_index = -2
+position = Vector2(648, 384)
+tile_map_data = PackedByteArray("AAD4//z/AAAAAAIAAAD4//v/AAABAAEAAAD5//v/AAACAAIAAAD3//v/AAACAAIAAAD4//r/AAAAAAIAAAD2//v/AAADAAIAAAD2//r/AAAAAAIAAAD6//v/AAAEAAIAAAD6//r/AAAFAAAAAAD7//r/AAAEAAIAAAD1//r/AAABAAIAAAD3//b/AAAAAAIAAAD3//X/AAABAAAAAAD2//j/AAAFAAEAAAD3//j/AAABAAEAAADz//j/AAAAAAEAAAD0//j/AAACAAIAAAD1//j/AAACAAIAAAD2//n/AAABAAEAAAD4//j/AAAEAAEAAAD6//n/AAAEAAEAAAD7//n/AAABAAAAAAD1//n/AAADAAEAAAD4//n/AAAFAAAAAAD5//n/AAACAAIAAAD3//f/AAAAAAIAAAA=")
+tile_set = ExtResource("5_lol5v")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_5ou74")
+volume_db = -5.0
+autoplay = true
+
+[node name="CollisionBoxes" type="Node2D" parent="."]
+position = Vector2(660, 396)
+
+[node name="EventObject" type="Area2D" parent="CollisionBoxes"]
+position = Vector2(-192, -96)
+collision_layer = 2
+script = ExtResource("3_us6cx")
+dialogueLine = "You stagger into the entrance destroyed laboratorium. Wires sporadically spit from the ceiling. Death echos from the silent hall. You hesistate for a bit"
+survivorSentence = ""
+canUp = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionBoxes/EventObject"]
+shape = SubResource("RectangleShape2D_wr0sn")
+
+[node name="Cover" type="Sprite2D" parent="CollisionBoxes/EventObject"]
+visible = false
+z_index = 10
+scale = Vector2(0.0384, 0.0533333)
+texture = ExtResource("2_k8s1e")
+
+[node name="EventObject3" type="Area2D" parent="CollisionBoxes"]
+position = Vector2(-192, -120)
+collision_layer = 2
+script = ExtResource("3_us6cx")
+dialogueLine = "A crossway lies in front of you."
+survivorSentence = "The shuffles uncomfortably."
+canLeft = true
+canRight = true
+canUp = true
+canDown = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionBoxes/EventObject3"]
+shape = SubResource("RectangleShape2D_wr0sn")
+
+[node name="Cover" type="Sprite2D" parent="CollisionBoxes/EventObject3"]
+visible = false
+z_index = 10
+scale = Vector2(0.0384, 0.0533333)
+texture = ExtResource("2_k8s1e")
+
+[node name="EventObject4" type="Area2D" parent="CollisionBoxes"]
+position = Vector2(-192, -144)
+collision_layer = 2
+script = ExtResource("3_us6cx")
+dialogueLine = "A shattered assault rifle lays on the floor, bullets scattered across.  "
+survivorSentence = "The man stares widely at the gun. "
+canUp = true
+canDown = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionBoxes/EventObject4"]
+shape = SubResource("RectangleShape2D_wr0sn")
+
+[node name="Cover" type="Sprite2D" parent="CollisionBoxes/EventObject4"]
+visible = false
+z_index = 10
+scale = Vector2(0.0384, 0.0533333)
+texture = ExtResource("2_k8s1e")
+
+[node name="EventObject5" type="Area2D" parent="CollisionBoxes"]
+position = Vector2(-192, -168)
+collision_layer = 2
+script = ExtResource("3_us6cx")
+dialogueLine = "A pervasive smell of blood lingers, you try hard not to gag at the thought of your fellow man reduced to broken flesh. "
+survivorSentence = ""
+canRight = true
+canUp = true
+canDown = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionBoxes/EventObject5"]
+shape = SubResource("RectangleShape2D_wr0sn")
+
+[node name="Cover" type="Sprite2D" parent="CollisionBoxes/EventObject5"]
+visible = false
+z_index = 10
+scale = Vector2(0.0384, 0.0533333)
+texture = ExtResource("2_k8s1e")
+
+[node name="EventObject6" type="Area2D" parent="CollisionBoxes"]
+position = Vector2(-216, -120)
+collision_layer = 2
+script = ExtResource("3_us6cx")
+dialogueLine = "You have turned left"
+survivorSentence = ""
+canLeft = true
+canRight = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionBoxes/EventObject6"]
+shape = SubResource("RectangleShape2D_wr0sn")
+
+[node name="Cover" type="Sprite2D" parent="CollisionBoxes/EventObject6"]
+visible = false
+z_index = 10
+scale = Vector2(0.0384, 0.0533333)
+texture = ExtResource("2_k8s1e")
+
+[node name="EventObject19" type="Area2D" parent="CollisionBoxes"]
+position = Vector2(-120, -144)
+collision_layer = 2
+script = ExtResource("3_us6cx")
+dialogueLine = "You are immediately alarmed by a figure, horror grasps you by the head. You hesistate, you think of backing off. "
+survivorSentence = "The man struggles with his footing. "
+canLeft = true
+canUp = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionBoxes/EventObject19"]
+shape = SubResource("RectangleShape2D_wr0sn")
+
+[node name="Cover" type="Sprite2D" parent="CollisionBoxes/EventObject19"]
+visible = false
+z_index = 10
+scale = Vector2(0.0384, 0.0533333)
+texture = ExtResource("2_k8s1e")
+
+[node name="EventObject20" type="Area2D" parent="CollisionBoxes"]
+position = Vector2(-120, -168)
+collision_layer = 2
+script = ExtResource("3_us6cx")
+dialogueLine = "Nothing else to see here..."
+survivorSentence = ""
+canDown = true
+curEvent = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionBoxes/EventObject20"]
+shape = SubResource("RectangleShape2D_wr0sn")
+
+[node name="Cover" type="Sprite2D" parent="CollisionBoxes/EventObject20"]
+visible = false
+z_index = 10
+scale = Vector2(0.0384, 0.0533333)
+texture = ExtResource("2_k8s1e")
+
+[node name="EventObject21" type="Area2D" parent="CollisionBoxes"]
+position = Vector2(-144, -168)
+collision_layer = 2
+script = ExtResource("3_us6cx")
+dialogueLine = "You trudge on"
+survivorSentence = ""
+canLeft = true
+canDown = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionBoxes/EventObject21"]
+shape = SubResource("RectangleShape2D_wr0sn")
+
+[node name="Cover" type="Sprite2D" parent="CollisionBoxes/EventObject21"]
+visible = false
+z_index = 10
+scale = Vector2(0.0384, 0.0533333)
+texture = ExtResource("2_k8s1e")
+
+[node name="EventObject7" type="Area2D" parent="CollisionBoxes"]
+position = Vector2(-240, -120)
+collision_layer = 2
+script = ExtResource("3_us6cx")
+dialogueLine = "You trudge on. "
+survivorSentence = "The man suddenly points at a wall, you become annoyed when he doesn't actually point at anything of interest"
+canRight = true
+canUp = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionBoxes/EventObject7"]
+shape = SubResource("RectangleShape2D_wr0sn")
+
+[node name="Cover" type="Sprite2D" parent="CollisionBoxes/EventObject7"]
+visible = false
+z_index = 10
+scale = Vector2(0.0384, 0.0533333)
+texture = ExtResource("2_k8s1e")
+
+[node name="EventObject8" type="Area2D" parent="CollisionBoxes"]
+position = Vector2(-240, -144)
+collision_layer = 2
+script = ExtResource("3_us6cx")
+dialogueLine = "You accidently bump into a corpse. Whoever it was, their head has been decapatated, and blood oozes all over the floor. Yet another human life  to pay for 'progress' and 'the future'. You can't help but feel some spite towards the higher ups. "
+survivorSentence = "You overhear the man muttering something, a prayer as you suspect."
+canUp = true
+canDown = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionBoxes/EventObject8"]
+shape = SubResource("RectangleShape2D_wr0sn")
+
+[node name="Cover" type="Sprite2D" parent="CollisionBoxes/EventObject8"]
+visible = false
+z_index = 10
+scale = Vector2(0.0384, 0.0533333)
+texture = ExtResource("2_k8s1e")
+
+[node name="EventObject12" type="Area2D" parent="CollisionBoxes"]
+position = Vector2(-240, -168)
+collision_layer = 2
+script = ExtResource("3_us6cx")
+dialogueLine = "At the left, you notice a malfunctioning metal door, small sparks occasionally sputter, breathing some light through the inpenetrable darkness. You consider going through the broken door, even as uncertainty clouds over you."
+survivorSentence = ""
+canLeft = true
+canUp = true
+canDown = true
+curEvent = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionBoxes/EventObject12"]
+shape = SubResource("RectangleShape2D_wr0sn")
+
+[node name="Cover" type="Sprite2D" parent="CollisionBoxes/EventObject12"]
+visible = false
+z_index = 10
+scale = Vector2(0.0384, 0.0533333)
+texture = ExtResource("2_k8s1e")
+
+[node name="EventObject13" type="Area2D" parent="CollisionBoxes"]
+position = Vector2(-264, -168)
+collision_layer = 2
+script = ExtResource("3_us6cx")
+dialogueLine = "You managed fit through a large gap within the door, "
+survivorSentence = ""
+canRight = true
+canDown = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionBoxes/EventObject13"]
+shape = SubResource("RectangleShape2D_wr0sn")
+
+[node name="Cover" type="Sprite2D" parent="CollisionBoxes/EventObject13"]
+visible = false
+z_index = 10
+scale = Vector2(0.0384, 0.0533333)
+texture = ExtResource("2_k8s1e")
+
+[node name="EventObject14" type="Area2D" parent="CollisionBoxes"]
+position = Vector2(-264, -144)
+collision_layer = 2
+script = ExtResource("3_us6cx")
+dialogueLine = "There's nothing else of importance here"
+survivorSentence = ""
+canUp = true
+curEvent = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionBoxes/EventObject14"]
+shape = SubResource("RectangleShape2D_wr0sn")
+
+[node name="Cover" type="Sprite2D" parent="CollisionBoxes/EventObject14"]
+visible = false
+z_index = 10
+scale = Vector2(0.0384, 0.0533333)
+texture = ExtResource("2_k8s1e")
+
+[node name="EventObject9" type="Area2D" parent="CollisionBoxes"]
+position = Vector2(-168, -120)
+collision_layer = 2
+script = ExtResource("3_us6cx")
+dialogueLine = "You turned right."
+survivorSentence = ""
+canLeft = true
+canRight = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionBoxes/EventObject9"]
+shape = SubResource("RectangleShape2D_wr0sn")
+
+[node name="Cover" type="Sprite2D" parent="CollisionBoxes/EventObject9"]
+visible = false
+z_index = 10
+scale = Vector2(0.0384, 0.0533333)
+texture = ExtResource("2_k8s1e")
+
+[node name="EventObject10" type="Area2D" parent="CollisionBoxes"]
+position = Vector2(-144, -120)
+collision_layer = 2
+script = ExtResource("3_us6cx")
+dialogueLine = "You trudge forwards."
+survivorSentence = ""
+canLeft = true
+canUp = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionBoxes/EventObject10"]
+shape = SubResource("RectangleShape2D_wr0sn")
+
+[node name="Cover" type="Sprite2D" parent="CollisionBoxes/EventObject10"]
+visible = false
+z_index = 10
+scale = Vector2(0.0384, 0.0533333)
+texture = ExtResource("2_k8s1e")
+
+[node name="EventObject11" type="Area2D" parent="CollisionBoxes"]
+position = Vector2(-144, -144)
+collision_layer = 2
+script = ExtResource("3_us6cx")
+dialogueLine = "You hear out a soft, but anguished moaning on the right, you take immediate notice. This could be him. "
+survivorSentence = ""
+canRight = true
+canUp = true
+canDown = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionBoxes/EventObject11"]
+shape = SubResource("RectangleShape2D_wr0sn")
+
+[node name="Cover" type="Sprite2D" parent="CollisionBoxes/EventObject11"]
+visible = false
+z_index = 10
+scale = Vector2(0.0384, 0.0533333)
+texture = ExtResource("2_k8s1e")
+
+[node name="EventObject17" type="Area2D" parent="CollisionBoxes"]
+position = Vector2(-216, -192)
+collision_layer = 2
+script = ExtResource("3_us6cx")
+dialogueLine = "You hear a silent whisper in front of you"
+survivorSentence = "The man nudges on you, He directs his head to the front, he wants you do go forwards"
+canLeft = true
+canRight = true
+canUp = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionBoxes/EventObject17"]
+shape = SubResource("RectangleShape2D_wr0sn")
+
+[node name="Cover" type="Sprite2D" parent="CollisionBoxes/EventObject17"]
+visible = false
+z_index = 10
+scale = Vector2(0.0384, 0.0533333)
+texture = ExtResource("2_k8s1e")
+
+[node name="EventObject16" type="Area2D" parent="CollisionBoxes"]
+position = Vector2(-264, -192)
+collision_layer = 2
+script = ExtResource("3_us6cx")
+dialogueLine = "Something gleans ahead, yet darkness overcomes it at the same time. You can't tell what this strange session is. You ponder to investigate further"
+survivorSentence = "The man decides to stand by, hesitant."
+canLeft = true
+canRight = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionBoxes/EventObject16"]
+shape = SubResource("RectangleShape2D_wr0sn")
+
+[node name="Cover" type="Sprite2D" parent="CollisionBoxes/EventObject16"]
+visible = false
+z_index = 10
+scale = Vector2(0.0384, 0.0533333)
+texture = ExtResource("2_k8s1e")
+
+[node name="EventObject15" type="Area2D" parent="CollisionBoxes"]
+position = Vector2(-216, -264)
+collision_layer = 2
+script = ExtResource("3_us6cx")
+canDown = true
+curEvent = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionBoxes/EventObject15"]
+shape = SubResource("RectangleShape2D_wr0sn")
+
+[node name="Cover" type="Sprite2D" parent="CollisionBoxes/EventObject15"]
+visible = false
+z_index = 10
+scale = Vector2(0.0384, 0.0533333)
+texture = ExtResource("2_k8s1e")
+
+[node name="EventObject18" type="Area2D" parent="CollisionBoxes"]
+position = Vector2(-240, -192)
+collision_layer = 2
+script = ExtResource("3_us6cx")
+dialogueLine = "You have a feeling that it could be better to head towards the left."
+survivorSentence = ""
+canLeft = true
+canRight = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionBoxes/EventObject18"]
+shape = SubResource("RectangleShape2D_wr0sn")
+
+[node name="Cover" type="Sprite2D" parent="CollisionBoxes/EventObject18"]
+visible = false
+z_index = 10
+scale = Vector2(0.0384, 0.0533333)
+texture = ExtResource("2_k8s1e")
+
+[node name="EventObject27" type="Area2D" parent="CollisionBoxes"]
+position = Vector2(-288, -192)
+collision_layer = 2
+script = ExtResource("3_us6cx")
+dialogueLine = "Your curiosity proves you correct, something is ahead. What you percieve ahead however becomes vaguer and vaguer. Strangely, you are welcomed by an upsurged memories from your childhood."
+survivorSentence = ""
+canLeft = true
+canRight = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionBoxes/EventObject27"]
+shape = SubResource("RectangleShape2D_wr0sn")
+
+[node name="Cover" type="Sprite2D" parent="CollisionBoxes/EventObject27"]
+visible = false
+z_index = 10
+scale = Vector2(0.0384, 0.0533333)
+texture = ExtResource("2_k8s1e")
+
+[node name="EventObject22" type="Area2D" parent="CollisionBoxes"]
+position = Vector2(-216, -216)
+collision_layer = 2
+script = ExtResource("3_us6cx")
+dialogueLine = "You moved forwards. Everything goes black. The breathing gets louder. For a moment, you freeze. "
+survivorSentence = "The only thing you can hear is the slight breathing of the man"
+canUp = true
+canDown = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionBoxes/EventObject22"]
+shape = SubResource("RectangleShape2D_wr0sn")
+
+[node name="Cover" type="Sprite2D" parent="CollisionBoxes/EventObject22"]
+visible = false
+z_index = 10
+scale = Vector2(0.0384, 0.0533333)
+texture = ExtResource("2_k8s1e")
+
+[node name="EventObject23" type="Area2D" parent="CollisionBoxes"]
+position = Vector2(-216, -240)
+collision_layer = 2
+script = ExtResource("3_us6cx")
+dialogueLine = "You moved forwards. You are suddenly tormented with thoughts of imminent death. A phrase repeats in your mind, 'Shall you go further on, your fate becomes a meaningless memory'"
+survivorSentence = "For a second, you think see the man smiling meekly"
+canUp = true
+canDown = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionBoxes/EventObject23"]
+shape = SubResource("RectangleShape2D_wr0sn")
+
+[node name="Cover" type="Sprite2D" parent="CollisionBoxes/EventObject23"]
+visible = false
+z_index = 10
+scale = Vector2(0.0384, 0.0533333)
+texture = ExtResource("2_k8s1e")
+
+[node name="EventObject24" type="Area2D" parent="CollisionBoxes"]
+position = Vector2(-312, -192)
+collision_layer = 2
+script = ExtResource("3_us6cx")
+dialogueLine = "Nothing of else of importance here"
+survivorSentence = ""
+canRight = true
+curEvent = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionBoxes/EventObject24"]
+shape = SubResource("RectangleShape2D_wr0sn")
+
+[node name="Cover" type="Sprite2D" parent="CollisionBoxes/EventObject24"]
+visible = false
+z_index = 10
+scale = Vector2(0.0384, 0.0533333)
+texture = ExtResource("2_k8s1e")
+
+[node name="EventObject25" type="Area2D" parent="CollisionBoxes"]
+position = Vector2(-192, -192)
+collision_layer = 2
+script = ExtResource("3_us6cx")
+dialogueLine = "Trudging forwards, you wonder to yourself of what brought you here. Once so moved by the dream of success and change, To make the world better. And here you are, in the mercy of those born with the luxury you never had and forces unknown to you they bring without question"
+survivorSentence = ""
+canLeft = true
+canDown = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionBoxes/EventObject25"]
+shape = SubResource("RectangleShape2D_wr0sn")
+
+[node name="Cover" type="Sprite2D" parent="CollisionBoxes/EventObject25"]
+visible = false
+z_index = 10
+scale = Vector2(0.0384, 0.0533333)
+texture = ExtResource("2_k8s1e")
+
+[node name="EventObject26" type="Area2D" parent="CollisionBoxes"]
+position = Vector2(-168, -168)
+collision_layer = 2
+script = ExtResource("3_us6cx")
+dialogueLine = "You tredge onwards."
+survivorSentence = "The man coughs out some blood. You become alarmed, you need to get out of here as fast as you can."
+canLeft = true
+canRight = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionBoxes/EventObject26"]
+shape = SubResource("RectangleShape2D_wr0sn")
+
+[node name="Cover" type="Sprite2D" parent="CollisionBoxes/EventObject26"]
+visible = false
+z_index = 10
+scale = Vector2(0.0384, 0.0533333)
+texture = ExtResource("2_k8s1e")
+
+[node name="EscapeObjects" type="Node2D" parent="."]
+position = Vector2(660, 396)
+
+[node name="EventObject" type="Area2D" parent="EscapeObjects"]
+position = Vector2(-192, -96)
+collision_layer = 2
+script = ExtResource("3_us6cx")
+dialogueLine = "0"
+canDown = true
+curEvent = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EscapeObjects/EventObject"]
+shape = SubResource("RectangleShape2D_wr0sn")
+
+[node name="EventObject3" type="Area2D" parent="EscapeObjects"]
+position = Vector2(-192, -120)
+collision_layer = 2
+script = ExtResource("3_us6cx")
+dialogueLine = "The exit is in front. "
+survivorSentence = "The man nods at you sincerely."
+canDown = true
+curEvent = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EscapeObjects/EventObject3"]
+shape = SubResource("RectangleShape2D_wr0sn")
+debug_color = Color(0.826879, 0.00154904, 0.951983, 0.42)
+
+[node name="EventObject6" type="Area2D" parent="EscapeObjects"]
+position = Vector2(-216, -120)
+collision_layer = 2
+script = ExtResource("3_us6cx")
+dialogueLine = "You feel the escape near. "
+survivorSentence = "The man shouts incomprehensably."
+canRight = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EscapeObjects/EventObject6"]
+shape = SubResource("RectangleShape2D_wr0sn")
+
+[node name="EventObject7" type="Area2D" parent="EscapeObjects"]
+position = Vector2(-240, -120)
+collision_layer = 2
+script = ExtResource("3_us6cx")
+dialogueLine = "There's no time to think."
+survivorSentence = ""
+canRight = true
+curEvent = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EscapeObjects/EventObject7"]
+shape = SubResource("RectangleShape2D_wr0sn")
+debug_color = Color(0.84925, 0.000909864, 0.901771, 0.42)
+
+[node name="EventObject8" type="Area2D" parent="EscapeObjects"]
+position = Vector2(-240, -144)
+collision_layer = 2
+script = ExtResource("3_us6cx")
+dialogueLine = "Your life flashes between your eyes. "
+survivorSentence = "The man hyperventelates deeply, yet his smile remains."
+canDown = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EscapeObjects/EventObject8"]
+shape = SubResource("RectangleShape2D_wr0sn")
+
+[node name="EventObject12" type="Area2D" parent="EscapeObjects"]
+position = Vector2(-240, -168)
+collision_layer = 2
+script = ExtResource("3_us6cx")
+dialogueLine = "Nothing else matters. "
+survivorSentence = "The man besides you smiles a wild grin."
+canDown = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EscapeObjects/EventObject12"]
+shape = SubResource("RectangleShape2D_wr0sn")
+
+[node name="EventObject17" type="Area2D" parent="EscapeObjects"]
+position = Vector2(-216, -192)
+collision_layer = 2
+script = ExtResource("3_us6cx")
+dialogueLine = "Keep running. "
+survivorSentence = ""
+canLeft = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EscapeObjects/EventObject17"]
+shape = SubResource("RectangleShape2D_wr0sn")
+
+[node name="EventObject15" type="Area2D" parent="EscapeObjects"]
+position = Vector2(-216, -264)
+collision_layer = 2
+script = ExtResource("3_us6cx")
+dialogueLine = "RUN. "
+canDown = true
+curEvent = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EscapeObjects/EventObject15"]
+shape = SubResource("RectangleShape2D_wr0sn")
+
+[node name="EventObject18" type="Area2D" parent="EscapeObjects"]
+position = Vector2(-240, -192)
+collision_layer = 2
+script = ExtResource("3_us6cx")
+dialogueLine = "Run now. "
+survivorSentence = ""
+canDown = true
+curEvent = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EscapeObjects/EventObject18"]
+shape = SubResource("RectangleShape2D_wr0sn")
+debug_color = Color(0.881832, 0.000341343, 0.817962, 0.42)
+
+[node name="EventObject22" type="Area2D" parent="EscapeObjects"]
+position = Vector2(-216, -216)
+collision_layer = 2
+script = ExtResource("3_us6cx")
+dialogueLine = "Just Run. "
+survivorSentence = "The man screams in a ear-shattering volume"
+canDown = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EscapeObjects/EventObject22"]
+shape = SubResource("RectangleShape2D_wr0sn")
+
+[node name="EventObject23" type="Area2D" parent="EscapeObjects"]
+position = Vector2(-216, -240)
+collision_layer = 2
+script = ExtResource("3_us6cx")
+dialogueLine = "You run as fast as you can. "
+survivorSentence = "The man's eyes are widened."
+canDown = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EscapeObjects/EventObject23"]
+shape = SubResource("RectangleShape2D_wr0sn")
+
+[node name="QuickTimeBar" type="ProgressBar" parent="."]
+visible = false
+z_index = 3
+layout_mode = 0
+offset_left = -324.0
+offset_top = -300.0
+offset_right = 324.0
+offset_bottom = -260.0
+theme_override_styles/background = SubResource("StyleBoxFlat_q3tm5")
+theme_override_styles/fill = SubResource("StyleBoxFlat_jsi5j")
+value = 50.0
+show_percentage = false
+script = ExtResource("8_t4hhe")
+
+[node name="Timer" type="Timer" parent="QuickTimeBar"]
+wait_time = 3.0
+one_shot = true
+
+[node name="DodgeButton" type="TextureButton" parent="."]
+visible = false
+self_modulate = Color(0.996945, 6.23293e-06, 1.54018e-06, 1)
+z_index = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -281.0
+offset_top = 208.0
+offset_right = 281.0
+offset_bottom = 294.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("9_6cv5e")
+texture_pressed = ExtResource("10_2hgo1")
+texture_hover = ExtResource("11_3q87j")
+stretch_mode = 5
+script = ExtResource("37_30cxq")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DodgeButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 230.0
+offset_top = 26.0
+offset_right = -236.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_b66qo")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[center] DODGE!"
+
+[node name="SlashEffect" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-9.09495e-13, 5.68434e-14)
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_66sdo")
+frame_progress = 0.965724
+
+[node name="SkongHimself" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("29_07tw8")
+
+[node name="SkongCorrupted" type="Sprite2D" parent="."]
+visible = false
+z_index = 11
+position = Vector2(0.574966, 1.33514e-05)
+scale = Vector2(1.66174, 1.57466)
+texture = ExtResource("33_cmoyf")
+
+[node name="SkongCloseup" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-9.09495e-13, 5.68434e-14)
+scale = Vector2(2.2, 2.2)
+sprite_frames = SubResource("SpriteFrames_ocqfs")
+frame = 9
+frame_progress = 1.0
+
+[node name="ow" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-9.09495e-13, 5.68434e-14)
+scale = Vector2(2.2, 2.2)
+sprite_frames = SubResource("SpriteFrames_eeaad")
+script = ExtResource("37_ry65u")
+shakeHor = false
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="EntityBlinkTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="EntityChoiceButtons" type="GridContainer" parent="."]
+visible = false
+z_index = 11
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -564.0
+offset_top = -324.0
+offset_right = 564.0
+offset_bottom = -238.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="Button" type="TextureButton" parent="EntityChoiceButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("9_6cv5e")
+texture_pressed = ExtResource("10_2hgo1")
+texture_hover = ExtResource("11_3q87j")
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="EntityChoiceButtons/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 168.0
+offset_top = 24.0
+offset_right = -178.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_wi6ag")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[center] JOIN IT"
+
+[node name="Button2" type="TextureButton" parent="EntityChoiceButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("9_6cv5e")
+texture_pressed = ExtResource("10_2hgo1")
+texture_hover = ExtResource("11_3q87j")
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="EntityChoiceButtons/Button2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 178.0
+offset_top = 24.0
+offset_right = -144.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_wi6ag")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[center] DO NOT"
+
+[node name="EndingChoices" type="GridContainer" parent="."]
+visible = false
+z_index = 11
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -564.0
+offset_top = 228.0
+offset_right = 564.0
+offset_bottom = 314.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="Button" type="TextureButton" parent="EndingChoices"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("9_6cv5e")
+texture_pressed = ExtResource("10_2hgo1")
+texture_hover = ExtResource("11_3q87j")
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="EndingChoices/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 168.0
+offset_top = 24.0
+offset_right = -178.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_b66qo")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[center] RESTART"
+
+[node name="Button2" type="TextureButton" parent="EndingChoices"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("9_6cv5e")
+texture_pressed = ExtResource("10_2hgo1")
+texture_hover = ExtResource("11_3q87j")
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="EndingChoices/Button2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 178.0
+offset_top = 24.0
+offset_right = -144.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_b66qo")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[center] QUIT"
+
+[node name="SurvivorChoices" type="GridContainer" parent="."]
+visible = false
+z_index = 11
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -564.0
+offset_top = 228.0
+offset_right = 564.0
+offset_bottom = 314.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="Button" type="TextureButton" parent="SurvivorChoices"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("9_6cv5e")
+texture_pressed = ExtResource("10_2hgo1")
+texture_hover = ExtResource("11_3q87j")
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="SurvivorChoices/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 168.0
+offset_top = 24.0
+offset_right = -178.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_b66qo")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[center] With?"
+
+[node name="Button2" type="TextureButton" parent="SurvivorChoices"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("9_6cv5e")
+texture_pressed = ExtResource("10_2hgo1")
+texture_hover = ExtResource("11_3q87j")
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="SurvivorChoices/Button2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 178.0
+offset_top = 24.0
+offset_right = -144.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_b66qo")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[center] (Stay silent)"
+
+[node name="SurvivorChoices2" type="GridContainer" parent="."]
+visible = false
+z_index = 11
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -564.0
+offset_top = 228.0
+offset_right = 564.0
+offset_bottom = 314.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="Button" type="TextureButton" parent="SurvivorChoices2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("9_6cv5e")
+texture_pressed = ExtResource("10_2hgo1")
+texture_hover = ExtResource("11_3q87j")
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="SurvivorChoices2/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 144.0
+offset_top = 24.0
+offset_right = -130.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_b66qo")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[center] (Give him the capsule)"
+
+[node name="Button2" type="TextureButton" parent="SurvivorChoices2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("9_6cv5e")
+texture_pressed = ExtResource("10_2hgo1")
+texture_hover = ExtResource("11_3q87j")
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="SurvivorChoices2/Button2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 178.0
+offset_top = 24.0
+offset_right = -144.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_b66qo")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[center] ..."
+
+[node name="MilitaryDialogue" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("33_fvnwl")
+introLines = ["URGENT MESSAGE TOWARDS PRIVATE JIN WANGFENG", "FROM COMMAND REPRESENTING THE 19TH ENFORCEMENT DIVISION OF TENTOPICHAL PHAMARCY CO.", "DEPLOYMENT NEAR THE SKANDAN-21-E RESEARCH FACILITY REQUIRED
+", "CONTAINMENT BREACHED BY AN EXTRATERRESTRIAL ENTITY BEING STUDIED AT THE FACILITY", "95.83% REPORTED FACILITY MEMBERS AND GUARDS KILLED", "ONE REPORTED TO HAVE FUNCTIONING, BUT DIMINISHING VITALS", "FIND HIM AND LEAD HIM OUT", "FINAL PAYMENT + SUCCESS BONUS: $312.90", "TENTOPICHAL: YOUR LIFE IS INCOMPLETE WITHOUT IT"]
+ending1Lines = ["STATUS UPDATE ON JIN WANGFENG", "JIN WANGFENG ACCORDING TO LIFE SCANNERS, HAS BEEN KILLED", "THE TENTOPICHAL PHAMARCY CO
+SENDS THEIR REGARDS FOR THIS TERRIBLE LOSS OF LIFE", "DEDUCTION PENALTY TOWARDS 
+JIN WANGFENG: $1042.10", "ENDING 1: DEATH"]
+ending2Lines = ["STATUS UPDATE ON JIN WANGFENG", "JIN WANGFENG HAS BEEN FOUND ALIVE ACCOMPANYING THE SURVIVOR", "THE TENTOPICHAL PHAMARCY CO
+CONGRATULATES HIS SUCCESS WITH THE MISSION", "PAYMENT EARNED + COMPANY TAX: $290.90", "ENDING 2: SAVIOR"]
+ending3Lines = ["STATUS UPDATE ON JIN WANGFENG", "JIN WANGFENG HAS BEEN FOUND ALIVE, HOWEVER, WITHOUT THE SURVIVOR", "THE TENTOPICHAL PHAMARCY CO
+WITH HEAVY HEART CANNOT COMPENSATE HIM FAIRLY FOR HIS FAILURE", "DEDUCTION PENALTY TOWARDS 
+JIN WANGFENG: $401.29", "ENDING 3: FAILURE"]
+ending4Lines = ["STATUS UPDATE ON JIN WANGFENG", "JIN WANGFENG'S VITALS WERE FOUND TO BE FLUCTUATING AT A ALARMING RATE. HOWEVER, THE SURVIVOR WAS FOUND ALIVE, ALTHOUGH HEAVILY BRUTALISED", "THE TENTOPICHAL PHAMARCY CO
+WILL BE DEPLOYING MORE TROOPS IN THE COMING DAYS TO EXTRACT HIM", "DEDUCTION PENALTY TOWARDS 
+JIN WANGFENG: $680.41", "ENDING 4: ACCESSION AND SACRIFICE"]
+ending5Lines = ["STATUS UPDATE ON JIN WANGFENG", "JIN WANGFENG'S VITALS WERE FOUND TO BE FLUCTUATING AT A ALARMING RATE. ", "THE TENTOPICHAL PHAMARCY CO
+WILL BE DEPLOYING MORE TROOPS IN THE COMING DAYS TO EXTRACT HIM", "DEDUCTION PENALTY TOWARDS 
+JIN WANGFENG: $680.18", "ENDING 5: ACCESSION ALONE"]
+
+[node name="SurvivorDialogue" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("43_lqlbf")
+survivor1Array = ["H…H-", "Pl-please…. don’t", "Don’t… let… take m-me", "Le… let…", "One… one more ch-chance… with…
+", "Please…
+", "J-Just o- One… more… ", "CHANCE."]
+survivor2Array = ["I-It…", "It has bore witness-", "F-for me…", "...HEAVEN"]
+survivor3Array = ["...I", "(He begins to lift himself up slightly)", "T-Thank you", "(You carry his arm over your shoulder, his wounds are still open, however the capsule may be able to reduce his bleeding. As he stands, he mumbles something out of his broken mouth)"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_pbxsp")
+position = Vector2(576, 324)
+scale = Vector2(1152, 648)
+texture = SubResource("CanvasTexture_047ie")
+
+[connection signal="typeComplete" from="DialogueLabel" to="." method="_on_text_type_complete"]
+[connection signal="timeout" from="DialogueLabel/TextTypeTime" to="DialogueLabel" method="_on_text_type_time_timeout"]
+[connection signal="timeout" from="TextLoadDelay" to="." method="_on_delay_timer_timeout"]
+[connection signal="button_down" from="DirectionsGridContainer/Button" to="." method="option_1_button_press"]
+[connection signal="button_down" from="DirectionsGridContainer/Button2" to="." method="option_2_button_press"]
+[connection signal="button_down" from="DirectionsGridContainer/Button3" to="." method="option_3_button_press"]
+[connection signal="button_down" from="DirectionsGridContainer/Button4" to="." method="option_4_button_press"]
+[connection signal="area_entered" from="PositionPivot/Area2D" to="." method="_on_position_pivot_area_entered"]
+[connection signal="timeout" from="QuickTimeBar/Timer" to="." method="_on_quick_timer_timeout"]
+[connection signal="button_down" from="DodgeButton" to="." method="dodge_attack"]
+[connection signal="timeout" from="EntityBlinkTimer" to="." method="_on_entity_blink_timeout"]
+[connection signal="button_down" from="EntityChoiceButtons/Button" to="." method="on_do_join"]
+[connection signal="button_down" from="EntityChoiceButtons/Button2" to="." method="on_do_not_join"]
+[connection signal="button_down" from="EndingChoices/Button" to="." method="restart_game"]
+[connection signal="button_down" from="EndingChoices/Button2" to="." method="quit_game"]
+[connection signal="button_down" from="SurvivorChoices/Button" to="." method="askQuestion"]
+[connection signal="button_down" from="SurvivorChoices/Button2" to="." method="LEAVEHIMTODIE"]
+[connection signal="button_down" from="SurvivorChoices2/Button" to="." method="giveTheMedicine"]
+[connection signal="button_down" from="SurvivorChoices2/Button2" to="." method="LEAVEHIMTODIE"]
